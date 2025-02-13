@@ -10,10 +10,11 @@ describe('Central de Atendimento ao Cliente TAT', () => {
   beforeEach(() => {
     cy.visit('./src/index.html')
   })
-
+// lição 1
   it('verifica o título da aplicação', () => {
     cy.title().should('be.equal', 'Central de Atendimento ao Cliente TAT')
   })
+// lição 2
 // exc extra 1
   it('preenche os campos origatórios e envia o formulário', () => {
     cy.get('#firstName').type('nome')
@@ -44,7 +45,7 @@ describe('Central de Atendimento ao Cliente TAT', () => {
     cy.get('#lastName').type('sobrenome')
     cy.get('#email').type('email@email.com')
     cy.get('#open-text-area').type('lalalaallal', {delay: 10})
-    cy.get('#phone-checkbox').click()
+    cy.get('#phone-checkbox').check()
     cy.contains('Enviar').click()
 
     cy.get('.error').should('be.visible')
@@ -95,10 +96,58 @@ describe('Central de Atendimento ao Cliente TAT', () => {
 
   })
 
+// exc extra 8
   it('envia o form com comando customizado, mas usando parametro e valor padrao', () => {
     cy.fillMandatoryFieldsAndSubmitUsingAObjectDefault()
 
     cy.get('.success').should('be.visible')
+  })
 
+// lição 3
+  it('seleciona um produto (YouTube) por seu texto', () => {
+    cy.get('select')
+    .select('YouTube')
+    .should('have.value', 'youtube')
+  })
+
+//exc extra 1
+  it('seleciona um produto (Mentoria) por seu valor (value)', () => {
+    cy.get('select')
+    .select('mentoria')
+    .should('have.value','mentoria')
+  })
+
+//exc extra 2
+  it('seleciona um produto (Blog) por seu índice', () => {
+    cy.get('select')
+    .select(1)
+    .should('have.value','blog')
+
+  })
+
+// lição 4
+  it('marca o tipo de atendimento "Feedback"', () => {
+    cy.get('input[type="radio"][value="feedback"]')
+    .check()
+    .should('be.checked')
+  })
+
+// exc extra
+  it('marca cada tipo de atendimento', () => {
+    cy.get('input[type="radio"]')
+      .each((radio) => {
+        cy.wrap(radio).check();
+        cy.wrap(radio).should("be.checked");
+      });
+  })
+
+// lição 5
+  it.only('marca ambos checkboxes, depois desmarca o último', () => {
+    cy.get('input[type="checkbox"]')
+    .check()
+    .should('be.checked')
+    .last()
+    .uncheck()
+    .should('not.be.checked')
   })
 })
