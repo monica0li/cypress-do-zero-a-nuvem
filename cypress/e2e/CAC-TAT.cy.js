@@ -10,11 +10,11 @@ describe('Central de Atendimento ao Cliente TAT', () => {
   beforeEach(() => {
     cy.visit('./src/index.html')
   })
-// lição 1
+// Lição 1 - Primeiro teste automatizado escrito com Cypress
   it('verifica o título da aplicação', () => {
     cy.title().should('be.equal', 'Central de Atendimento ao Cliente TAT')
   })
-// lição 2
+// Lição 2 - Digitando em campos e clicando em elementos
 // exc extra 1
   it('preenche os campos origatórios e envia o formulário', () => {
     cy.get('#firstName').type('nome')
@@ -72,8 +72,6 @@ describe('Central de Atendimento ao Cliente TAT', () => {
       .should('have.value', 'lalalaallal')
       .clear()
       .should('have.value', '')
-
-    
   })
 // exc extra 6
   it('exibe mensagem de erro ao submeter o formulário sem preencher os campos obrigatórios',() => {
@@ -86,14 +84,12 @@ describe('Central de Atendimento ao Cliente TAT', () => {
     cy.fillMandatoryFieldsAndSubmit()
 
     cy.get('.success').should('be.visible')
-
   })
 // exc extra 7.2
   it('envia o form com comando customizado, mas usando parametro', () => {
     cy.fillMandatoryFieldsAndSubmitUsingAObject(user)
 
     cy.get('.success').should('be.visible')
-
   })
 
 // exc extra 8
@@ -103,7 +99,7 @@ describe('Central de Atendimento ao Cliente TAT', () => {
     cy.get('.success').should('be.visible')
   })
 
-// lição 3
+// Lição 3 - Selecionando opções em campos de seleção suspensa
   it('seleciona um produto (YouTube) por seu texto', () => {
     cy.get('select')
     .select('YouTube')
@@ -125,7 +121,7 @@ describe('Central de Atendimento ao Cliente TAT', () => {
 
   })
 
-// lição 4
+// Lição 4 - Marcando inputs do tipo radio
   it('marca o tipo de atendimento "Feedback"', () => {
     cy.get('input[type="radio"][value="feedback"]')
     .check()
@@ -141,7 +137,7 @@ describe('Central de Atendimento ao Cliente TAT', () => {
       });
   })
 
-// lição 5
+// Lição 5 - Marcando (e desmarcando) inputs do tipo checkbox
   it('marca ambos checkboxes, depois desmarca o último', () => {
     cy.get('input[type="checkbox"]')
     .check()
@@ -151,7 +147,7 @@ describe('Central de Atendimento ao Cliente TAT', () => {
     .should('not.be.checked')
   })
 
-// lição 6
+// Lição 6 - Fazendo upload de arquivos com Cypress
   it('seleciona um arquivo da pasta fixtures', () => {
     cy.get('#file-upload')
     .selectFile('cypress/fixtures/example.json')
@@ -179,3 +175,4 @@ describe('Central de Atendimento ao Cliente TAT', () => {
     })
   })
 })
+//Lição 7 - Lidando com links que abrem em outra aba
