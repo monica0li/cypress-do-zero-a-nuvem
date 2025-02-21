@@ -155,7 +155,7 @@ describe('Central de Atendimento ao Cliente TAT', () => {
       expect(input[0].files[0].name).to.equal('example.json');
     })
   })
-//extra 1
+// exc extra 1
   it('seleciona um arquivo simulando um drag-and-drop', () => {
     cy.get('#file-upload')
     .selectFile('cypress/fixtures/example.json', {action: 'drag-drop'})
@@ -163,7 +163,7 @@ describe('Central de Atendimento ao Cliente TAT', () => {
       expect(input[0].files[0].name).to.equal('example.json');
     })
   })
-//extra 2
+// exc extra 2
   it('seleciona um arquivo utilizando uma fixture para a qual foi dada um alias', () => {
     cy.fixture('example.json')
     .as('arquivo')
@@ -174,5 +174,18 @@ describe('Central de Atendimento ao Cliente TAT', () => {
       expect(input[0].files[0].name).to.equal('example.json');
     })
   })
-})
 //Lição 7 - Lidando com links que abrem em outra aba
+  it('verifica que a política de privacidade abre em outra aba sem a necessidade de um clique', () => {
+    cy.contains('a', 'Política de Privacidade')
+    .should('have.attr', 'href', 'privacy.html')
+    .and('have.attr', 'target', '_blank')
+  })
+// exc extra 1
+  it('acessa a página da política de privacidade removendo o target e então clicando no link', () => {
+    cy.contains('a', 'Política de Privacidade')
+    .invoke('removeAttr', 'target')
+    .click()
+    
+    cy.contains('h1', 'CAC TAT - Política de Privacidade')
+  })
+})
