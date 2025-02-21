@@ -25,17 +25,17 @@ Para que você tire o melhor proveito do curso, é necessário que você possua 
 ## Primeiros passos
 ### Instalação e Inicialização
 
-1. Na raiz do projeto, execute o comando npm install cypress@13.12.0 --save-dev (ou npm i cypress@13.12.0 -D para a versão curta).
-2. Execute o comando npx cypress open para abrir o Cypress pela primeira vez e deixe-o guiá-lo na criação de uma suite de testes de ponta a ponta (E2E).
+1. Na raiz do projeto, execute o comando `npm install cypress@13.12.0 --save-dev` (`ou npm i cypress@13.12.0 -D` para a versão curta).
+2. Execute o comando `npx cypress open` para abrir o Cypress pela primeira vez e deixe-o guiá-lo na criação de uma suite de testes de ponta a ponta (E2E).
 3. Por fim, com a Cypress App aberta, crie um arquivo chamado CAC-TAT.cy.js e feche a Cypress App. 
 
 ## Como rodar os testes?
 São utilizados os seguintes comandos:
 
-```cy:open``` -> abre a cypress app
+`cy:open` -> abre a cypress app
 
-```test``` -> roda os testes em modo headless
+`test` -> roda os testes em modo headless
 
-```cy:open:mobile``` -> abre a cypress app simulando uma viewport mobile
+`cy:open:mobile` -> abre a cypress app simulando uma viewport mobile
 
-```test:mobile``` -> roda os testes em modo headless simulando uma viewport mobile
+`test:mobile` -> roda os testes em modo headless simulando uma viewport mobile
