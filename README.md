@@ -1,6 +1,6 @@
 # Testes automatizados - Cypress, do Zero à Nuvem
 
-Esse projeto se trata de testes automatizados escritos para o meu primeiro cursode Cypress - "Cypress, do Zero à Nuvem" - o qual testo um formulário para uma Central de Atendimento ao Cliente.
+Esse projeto se trata de testes automatizados escritos para o meu primeiro curso de Cypress - "Cypress, do Zero à Nuvem" - o qual testo um formulário para uma Central de Atendimento ao Cliente.
 
 ## Pré-requisitos
 ### SIstemas 
