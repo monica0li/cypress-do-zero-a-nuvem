@@ -74,7 +74,7 @@ describe('Central de Atendimento ao Cliente TAT', () => {
       .should('have.value', '')
   })
 // exc extra 6
-  it.only('exibe mensagem de erro ao submeter o formulário sem preencher os campos obrigatórios',() => {
+  it('exibe mensagem de erro ao submeter o formulário sem preencher os campos obrigatórios',() => {
     cy.clock()
     
     cy.get('button')
@@ -131,11 +131,11 @@ describe('Central de Atendimento ao Cliente TAT', () => {
   })
 
 // Lição 4 - Marcando inputs do tipo radio
-  it('marca o tipo de atendimento "Feedback"', () => {
+Cypress._.times(10, () => {it.only('marca o tipo de atendimento "Feedback"', () => {
     cy.get('input[type="radio"][value="feedback"]')
     .check()
     .should('be.checked')
-  })
+  })})
 
 // exc extra
   it('marca cada tipo de atendimento', () => {
